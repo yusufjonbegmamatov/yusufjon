@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mening Sahifam</title>
+  <style>
+    :root {
+      --primary: #6366f1;
+      --dark: #1e293b;
+      --light: #f8fafc;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #333;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    header {
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+    }
+    .logo { font-size: 1.8rem; font-weight: bold; }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 2rem;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--primary); }
+    main { margin-top: 80px; padding: 4rem 2rem; }
+    .hero {
+      text-align: center;
+      color: white;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 0;
+    }
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      animation: fadeInDown 1s;
+    }
+    .hero p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1s 0.3s backwards;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(99,102,241,0.4);
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 4rem auto;
+    }
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover { transform: translateY(-10px); }
+    .card i { font-size: 3rem; color: var(--primary); margin-bottom: 1rem; }
+    footer {
+      text-align: center;
+      padding: 3rem;
+      background: rgba(0,0,0,0.8);
+      color: white;
+      margin-top: 4rem;
+    }
+    @keyframes fadeInDown {
+      from { opacity:0; transform:translateY(-50px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity:0; transform:translateY(50px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.8rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">MeningLogo</div>
+      <div class="nav-links">
+        <a href="#home">Bosh sahifa</a>
+        <a href="#services">Xizmatlar</a>
+        <a href="#about">Men haqimda</a>
+        <a href="#contact">Aloqa</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <h1>Salom, men <span style="color:#ffd700;">Ahmad</span>man!</h1>
+      <p>Full-Stack dasturchi va zamonaviy veb-saytlar yaratuvchisi</p>
+      <a href="#contact" class="btn">Men bilan bog'lanish</a>
+    </section>
+
+    <div class="cards" id="services">
+      <div class="card">
+        <i class="fas fa-code"></i>
+        <h3>Veb dasturlash</h3>
+        <p>HTML, CSS, JavaScript, React, Node.js bilan zamonaviy veb ilovalar</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Mobil ilovalar</h3>
+        <p>Responsive dizayn va PWA (Progressive Web Apps) yaratish</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-paint-brush"></i>
+        <h3>UI/UX Dizayn</h3>
+        <p>Chiroyli va qulay foydalanuvchi interfeyslari</p>
+      </div>
+    </div>
+  </main>
+
+  <footer id="contact">
+    <p>&copy; 2025 Ahmad. Barcha huquqlar himoyalangan.</p>
+    <p>
+      <a href="mailto:ahmad@example.com" style="color:#6366f1; margin:0 10px;">Email</a> |
+      <a href="https://t.me/ahmaddev" style="color:#6366f1; margin:0 10px;">Telegram</a> |
+      <a href="https://github.com/ahmad" style="color:#6366f1; margin:0 10px;">GitHub</a>
+    </p>
+  </footer>
+
+  <script>
+    // Oddiy scroll animatsiya
+    window.addEventListener('scroll', () => {
+      document.querySelector('header').style.background = 
+        window.scrollY > 50 ? 'rgba(0,0,0,0.9)' : 'rgba(0,0,0,0.7)';
+    });
+  </script>
+</body>
+</html>
